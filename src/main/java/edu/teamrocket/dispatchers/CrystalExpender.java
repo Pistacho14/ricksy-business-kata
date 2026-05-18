@@ -3,7 +3,7 @@ package edu.teamrocket.dispatchers;
 import edu.teamrocket.payment.PaymentMethod;
 import edu.teamrocket.receptivo.GuestDispatcher;
 
-public class CrystalExpender implements GuestDispatcher{
+public class CrystalExpender implements GuestDispatcher {
     private int stock;
     private double itemCost;
 
@@ -14,7 +14,7 @@ public class CrystalExpender implements GuestDispatcher{
 
     @Override
     public void dispatch(PaymentMethod usuario) {
-        if(this.stock > 0 && usuario.pay(getItemCost())) {
+        if (this.stock > 0 && usuario.pay(getItemCost())) {
             this.stock -= 1;
         }
     }
@@ -34,6 +34,5 @@ public class CrystalExpender implements GuestDispatcher{
                 cost: %f
                 """.formatted(stock(), getItemCost());
     }
-
 
 }

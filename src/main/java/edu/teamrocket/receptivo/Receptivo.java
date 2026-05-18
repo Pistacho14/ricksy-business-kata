@@ -11,7 +11,7 @@ public class Receptivo {
 
     private List<GuestDispatcher> receptivo = new ArrayList<>();
 
-    private  Receptivo() {
+    private Receptivo() {
     }
 
     public void registra(GuestDispatcher dispatcher) {
@@ -19,7 +19,7 @@ public class Receptivo {
     }
 
     public void dispatch(PaymentMethod usuario) {
-        for(GuestDispatcher receptor : receptivo) {
+        for (GuestDispatcher receptor : receptivo) {
             receptor.dispatch(usuario);
         }
     }
@@ -27,5 +27,5 @@ public class Receptivo {
     public static Receptivo getReceptivo() {
         return instance = instance == null ? new Receptivo() : instance;
     }
-    
+
 }
